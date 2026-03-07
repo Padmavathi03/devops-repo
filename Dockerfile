@@ -4,5 +4,4 @@ COPY . .
 RUN pip install gunicorn
 RUN pip install -r requirements.txt
 ENV PORT=80
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 
-RUN apt-get install -y curl
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 main:app
